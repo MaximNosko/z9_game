@@ -150,6 +150,7 @@ function sozdNPC()
 			{
 				//karta[x2][y2]
 				io.to(karta[x2][y2].socket_id).emit("smert");
+				//io.sockets.connected[karta[x2][y2].socket_id].disconnect();
 				log(players[karta[x2][y2].socket_id].name+" убит");
 				io.sockets.emit("vr",x,y,"NPC_fire");
 				//vr(x2,y2,"bah");
