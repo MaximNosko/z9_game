@@ -252,7 +252,8 @@ function marshrut(x1,y1,x2,y2)//для построения очереди пе�
 }
 
 var port = 3000;
-var socket = io.connect('http://localhost:' + port);
+//var socket = io.connect('http://localhost:' + port);
+var socket = io.connect(location.href+":" + port);
 socket.on('hello', function(defName)
 {
 	socket_id=socket.id;
