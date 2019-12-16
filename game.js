@@ -161,7 +161,7 @@ function sozdNPC()
 		setTimeout(moveNPC,2000);
 	};
 	//setTimeout(moveNPC,5000);
-	moveNPC();
+	setTimeout(moveNPC,2000);
 }
 sozdNPC();
 setTimeout(sozdNPC,400);
