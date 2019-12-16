@@ -336,7 +336,7 @@ socket.on('reload',function(time,type)
 	
 });
 socket.on("ready",function(type){/*console.log("Удалённый таймер "+type+" закончился")*/});
-socket.on("smert",function(){alert("Вы умерли");location.href="smert.html?"+document.getElementById("coins").innerHTML});
+socket.on("smert",function(){/*alert("Вы умерли");*/location.href="smert.html?"+document.getElementById("coins").innerHTML});
 socket.on("vr",function(x,y,img)
 {
 	//alert(x);
