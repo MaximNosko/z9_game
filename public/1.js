@@ -20,6 +20,11 @@ function otrisovka()
 			td.rows[i].appendChild(document.createElement("td"));
 			td.rows[i].cells[i2].appendChild(document.createElement("img"));
 			td.rows[i].cells[i2].children[0].src="nichego.png";
+			if((i>=6)||(i2>=6))
+			{
+				td.rows[i].cells[i2].children[0].src="NPCspawn.png";
+				//td.rows[i].cells[i2].style.backgroundImage="url(\"NPCspawn.png\")";
+			}
 		}
 	}
 	for(var i=0;i<karta.length;i++)

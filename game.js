@@ -18,12 +18,12 @@ for(var i=0;i<10;i++)
 function sozdNPC()
 {
 	
-	var x= 5+Math.floor(Math.random()*(karta.length-5));
-	var y= 5+Math.floor(Math.random()*(karta[x].length-5));
+	var x= 6+Math.floor(Math.random()*(karta.length-6));
+	var y= 6+Math.floor(Math.random()*(karta[x].length-6));
 	while(karta[x][y]!==null)
 	{
-		x= 5+Math.floor(Math.random()*(karta.length-5));
-		y= 5+Math.floor(Math.random()*(karta[x].length-5));
+		x= 6+Math.floor(Math.random()*(karta.length-6));
+		y= 6+Math.floor(Math.random()*(karta[x].length-6));
 	}
 	karta[x][y]={};
 	karta[x][y].type="NPC";
@@ -164,8 +164,8 @@ function sozdNPC()
 	moveNPC();
 }
 sozdNPC();
-sozdNPC();
-sozdNPC();
+setTimeout(sozdNPC,400);
+setTimeout(sozdNPC,800);
 //sozdNPC();
 //sozdNPC();
 
@@ -445,7 +445,7 @@ io.on('connection', function (socket)
 		}
 		
 		var rasst=Math.sqrt((x-x2)*(x-x2)+(y-y2)*(y-y2));
-		if((rasst<=2.8)&&(rasst>0))
+		if((rasst<=3)&&(rasst>0))
 		{
 			socket.emit("reload",10000,"fire");
 			if(players.hasOwnProperty(socket.id.toString()))
@@ -484,6 +484,7 @@ io.on('connection', function (socket)
 				}
 				else if(karta[x2][y2].type==="NPC")
 				{
+					//console.log("Игрок выстрелил, расстояние до нпс "+rasst)
 					karta[x2][y2]=null;
 					
 					vr(x2,y2,"bah");
@@ -503,7 +504,7 @@ io.on('connection', function (socket)
 					}
 					socket.emit("coins",karta[x][y].coins);
 					io.sockets.emit("obnSpisok",tm);
-					sozdNPC();
+					sozdNPC(sozdNPC,2000);
 				}
 			}
 		}
