@@ -1,0 +1,44 @@
+<!DOCTYPE html
+<html>
+<style>
+	.move:hover
+	{
+		background-color: blue;
+	}
+	.fire:hover
+	{
+		background-color: #C00;
+	}
+	.fire,.move
+	{
+		background-color:#FFC1C1;
+	}
+	img
+	{
+		background-color: #E6E6E6;
+	}
+	vr
+	{
+		position: absolute;
+		margin-top: -100px;
+	}
+</style>
+<meta charset="utf-8" />
+Готовность к перемещению:
+<br />
+<progress value="100" max="100" id="reload_move">
+</progress>
+<br />
+Готовнсоть к стрельбе:
+<br />
+<progress value="100" max="100" id="reload_fire">
+</progress>
+<br />
+Очки:
+<div id="coins">0</div>
+<div id="osn"></div>
+<div id="players"></div>
+<div id="log"></div>
+<script src="socket.io.js"></script>
+<script src="1.js"></script>
+</html>
